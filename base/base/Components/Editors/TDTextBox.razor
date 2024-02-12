@@ -1,0 +1,37 @@
+﻿@using DevExpress.Blazor;
+@using DevExpress.Blazor.Base;
+
+@namespace GisMasterWblBase.Components
+
+@inherits DxTextBox
+
+<span>
+    @RenderBase()
+</span>
+
+@code {
+    RenderFragment RenderBase() => builder => base.BuildRenderTree(builder);
+
+    // metodo "DevExpress" per settare impostazioni di base a un component nuovo facendolo ereditare da un loro component
+    private bool _initialParametersSet;
+    protected override Task SetParametersAsyncCore(ParameterView parameters)
+    {
+        if (!_initialParametersSet)
+        {
+            base.Enabled = true;
+            base.ClearButtonDisplayMode = DataEditorClearButtonDisplayMode.Auto;
+
+            /*
+            * other initializations and logics...
+            */
+
+            _initialParametersSet = true;
+        }
+        return base.SetParametersAsyncCore(parameters);
+    }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+    }
+}
