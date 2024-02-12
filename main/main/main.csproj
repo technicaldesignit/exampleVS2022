@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	<UseRazorSourceGenerator>false</UseRazorSourceGenerator>
+	<!-- <UseRazorSourceGenerator>false</UseRazorSourceGenerator> -->
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\base\base\base.csproj" />
+    <ProjectReference Include="..\..\baseproj\baseproj\baseproj.csproj" />
   </ItemGroup>
 
 </Project>
